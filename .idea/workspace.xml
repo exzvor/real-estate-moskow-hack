@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7588638c-311c-418d-9e08-b13d863ea14f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/go.sum" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/internal/domain/app/auth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/internal/domain/controllers/authControllers.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/internal/domain/models/models.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/internal/domain/models/repository.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/internal/domain/utils/utils.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cmd/app/main.go" afterDir="false" />
+    <list default="true" id="7588638c-311c-418d-9e08-b13d863ea14f" name="Changes" comment="auth backend">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +109,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="auth backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="auth backend" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
