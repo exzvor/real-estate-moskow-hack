@@ -1,31 +1,25 @@
 'use strict'
 
-const login = document.querySelector('.login');
-const password = document.querySelector('.password');
-const button = document.querySelector('.button');
+const form = document.getElementById('form');
+const url = "http://localhost:8080/api/user/new";
 
-const data = {};
-
-data.login = login.value;
-data.pass = password.value;
 
 const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
+// myHeaders.append("Content-Type", "application/json");
 
-const raw = JSON.stringify(data);
-console.log(raw);
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-const requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: raw
-};
+    const data = new FormData(form);
 
-const url = "";  // СЮДА ВСТАВЬ URL
+    let preparedData = JSON.stringify([...data].flat());
+    console.log(preparedData)
 
-button.addEventListener('click', () => {
-    fetch(url, requestOptions)
+    fetch(url, {
+        method: "POST",
+        body: data,
+    })
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
-})
+});
