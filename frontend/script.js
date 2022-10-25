@@ -23,3 +23,32 @@ form.addEventListener('submit', (e) => {
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
 });
+
+
+// inmplementing fileReader
+
+function fileReader(oEvent) {
+    const oFile = oEvent.target.files[0];
+    const sFilename = oFile.name;
+
+    const reader = new FileReader();
+    const result = {};
+
+    reader.onload = function (e) {
+        let data = e.target.result;
+        data = new Uint8Array(data);
+        const workbook = XLSX.read(data, { type: 'array' });
+        console.log(workbook);
+        const result = {};
+        workbook.SheetNames.forEach(function (sheetName) {
+            const roa = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], { header: 1 });
+            if (roa.length) result[sheetName] = roa;
+        });
+        console.log(result);
+    };
+    reader.readAsArrayBuffer(oFile);
+}
+
+document.querySelector('#input__file').addEventListener('change', function (e1) {
+    fileReader(e);
+});
