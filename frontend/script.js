@@ -1,7 +1,7 @@
 'use strict'
 
 class Table {
-    constructor(location = "-", rooms = "-", age = "-", floors = "-", material = "-", currentFloor = "-", squareFlat = "-", squareKitchen = "-", balcony = "-", subway = "-", condition = "-") {
+    constructor(location, rooms, age, floors, material, currentFloor, squareFlat, squareKitchen, balcony, subway, condition) {
         this.location = location;
         this.rooms = rooms;
         this.age = age;
@@ -53,6 +53,7 @@ function fileReader(oEvent) {
     const sFilename = oFile.name;
 
     const reader = new FileReader();
+    const result = {};
 
     reader.onload = function (e) {
         let data = e.target.result;
@@ -120,6 +121,7 @@ function getRows(result) {
         }
     }
 }
+
 
 // YANDEX MAP API
 
@@ -216,4 +218,3 @@ ymaps.ready(init);
 document.querySelector('#input__file').addEventListener('change', function (e) {
     fileReader(e);
 });
-
