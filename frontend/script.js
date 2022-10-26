@@ -15,7 +15,7 @@ class Table {
         this.condition = condition;
     }
     makeRow() {
-        const row = `<td class="location">${this.location}</td><td class="rooms">${this.rooms}</td><td class="age">${this.age}</td><td class="floors">${this.floors}</td><td class="material">${this.material}</td><td class="currentFloor">${this.currentFloor}</td><td class="squareFlat">${this.squareFlat}</td><td class="squareKitchen">${this.squareKitchen}</td><td class="balcony">${this.balcony}</td><td class="subway">${this.subway}</td><td class="condition">${this.condition}</td>`;
+        const row = `<td class="location"><input type='text' value='${this.location}'></td><td class="rooms"><input type='text' value='${this.rooms}'></td><td class="age"><input type='text' value='${this.age}'></td><td class="floors"><input type='text' value='${this.floors}'></td><td class="material"><input type='text' value='${this.material}'></td><td class="currentFloor"><input type='text' value='${this.currentFloor}'></td><td class="squareFlat"><input type='text' value='${this.squareFlat}'></td><td class="squareKitchen"><input type='text' value='${this.squareKitchen}'></td><td class="balcony"><input type='text' value='${this.balcony}'></td><td class="subway"><input type='text' value='${this.subway}'></td><td class="condition"><input type='text' value='${this.condition}'></td>`;
         const table = document.querySelector('.table');
         table.insertAdjacentHTML('beforeend', row);
     };
