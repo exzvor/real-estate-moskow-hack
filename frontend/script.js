@@ -25,7 +25,7 @@ class Table {
 }
 
 const form = document.getElementById('form');
-const url = "https://hack-auth.herokuapp.com/api/user/login";
+const url = "https://hack-auth.herokuapp.com/api/user/new";
 
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
@@ -33,15 +33,15 @@ myHeaders.append("Content-Type", "application/json");
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const data = new FormData(form);
+    const email = document.querySelector(".email").value;
+    const password = document.querySelector(".password").value;
 
-    let preparedData = JSON.stringify([...data].flat());
-    console.log(preparedData);
+    const body = `{\"email\": \"${email}\", \"password\": \"${password}\"}`;
 
     fetch(url, {
         method: "POST",
         // headers: myHeaders,
-        body: preparedData,
+        body: body,
     })
         .then(response => response.text())
         .then(result => console.log(result))
@@ -121,7 +121,6 @@ function getRows(result) {
         }
     }
 }
-
 
 // YANDEX MAP API
 
